@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <title></title>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="jumbotron parent">
+        <div class="row">
+          <div class="col-md-2 left">
+            
+          </div>
+          <div class="col-md-6 left">
+            <div class="panel col-sm-6 offset-sm-3">
+              <h1>akan names</h1>
+              <div class="form-group top-form">
+                <label for="century" class="labels">Century</label>
+                <input type="number" class="form-control" placeholder="Century" id="century" required  min="0" max="30">
+              </div>
+              <div class="form-group">
+                <label for="year" class="labels">Year</label>
+                <input type="list" placeholder="Enter the year" class="form-control" id="year" required min="0" max="100" >
+              </div>
+              <div class="form-group">
+                <label for="month" class="labels">Month</label>
+                <input type="number" class="form-control" placeholder="Enter the month of the year" id="month" required min="0" max="12">
+              </div>
+              <div class="form-group">
+                <label for="monthDay" class="labels">Day of month</label>
+                <input type="number" placeholder="Enter the day of the month" class="form-control" id="monthday" required min="1" max="31" >
+              </div>
+                    <form class="radio-button">
+                      <input type="radio" class="genders labels" value="male" id="rad1" name="rads" required>Male
+                      <input type="radio" class="genders labels" value="female" id="rad1" name="rads" required>Female
+                    </form>
+                    <br>
+                    <a href="#result"><button type="button" name="button" class="btn btn-primary mb-2" onclick="checkDayOfWeek();">Calculate Birthday</button></a>
+                    <h1 id="result"></h1>
+            </div>
+          </div>
+        </div>
+      </div>
+
+  </div><br>
+  
+  <script src="js/js.js"></script>
+  </body>
+</html>
