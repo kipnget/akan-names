@@ -104,7 +104,7 @@ function validateForm() {
           myear.style.border = "2px solid red";
           return false;
       }
-  } if (ccentury.value == "" || ccentury,value == null){
+  } if (ccentury.value == "" || ccentury.value == null){
     document.getElementById("result").innerHTML +="ccentury is required";
     document.getElementById("result").style.color ='blue';
     ccentury.style.border ="2px solid red";
