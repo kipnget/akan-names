@@ -69,5 +69,9 @@ font-size: 20px;
 }
 
 .output{
-  font-size: 22px;
+  font-size: 30px;
+  color: azure;
+}
+#para1 {
+  font-size: 30px;
 }
