@@ -1,72 +1,60 @@
-@import url('https://fonts.googleapis.com/css?family=Khula&display=swap');
-body{
-  background-color: #47b14c;
-}
-h1{
-  color: #0f0f0f;
-}
-.parent{
-  margin-top: 10px;
-  margin-bottom: 0;
-  height: 670px;
-  padding: 0;
-  background-repeat: no-repeat;
+
+body {
+  /* background-color: #e9ecef;   */
+  /* background-image: url(https://codm/wp-content/uploads/2016/07/flying-birds-animation-using-three_js-1.gif); */
+  background-color: #eff5f7;
+ 
   background-size: cover;
-  background-image: #2cbb08;
-  box-shadow: 1px 0px 2px #d13a3a;
-}
-.left{
-  
-  background-size: center;
-  height: 670px;
-  border-radius: 10px 0 0 10px;
-  margin: 0;
-}
-.overlay{
-  background-color: rgba(0, 0, 0, 0.8);
-  border-radius: 5px 0 0 5px;
-  height: 670px;
+  padding-left: 20px;
+  font-size: 25px;
+
+
 }
 
-.top-form{
-  margin-top: 0px;
+/* .introduction{
+  text-align: center;
+} */
+
+#welcome-message {
+  font-family: fantasy;
+  color: #000;
 }
-.labels{
-  font-family: monospace;
-  font-weight: lighter;
-  font-size: 20px;
-  color: #3822b6;
+
+.main {
+  text-align: center;
 }
-.p-text{
-  margin: 30px 30px 30px 10px;
-  color: #ffffff;
-  font-size: 20px;
-  font-family: 'Khula', sans-serif;
-}
-.genders{
-  margin-left: 50px;
-}
-.btn{
-  margin-left: 50px;
+
+input {
+  width: 60px;
+  padding: 10px;
+  border-radius: 4px;
+  margin-bottom: 10px;
   margin-top: 20px;
-  height: 45px;
-  width: 250px;
-  border-radius: 20px;
 }
-.q-text{
-  color: #fdd043;
-  font-size: 30px;
-  font-weight: bold;
-  margin: 80px 20px 20px 10px;
+
+input[type=submit] {
+  background-color: #fff;
+  color: #000;
+  width: 120px;
+
+  margin-top: 100px;
 }
-#result{
-  margin-top: 30px;
-  color: #000000;
-  font-size: 28px;
+
+input[type=submit]:hover {
+  background-color: #6e2c00;
+  color: #fff;
 }
-.rounded-circle{
-  margin-left: 40%;
+
+.label {
+  margin-top: 20px;
 }
-.century{
-  float: left;
+
+input[type=radio] {
+  border: 0px;
+  height: 2em;
+  color: #f08a2d
+}
+
+.output {
+  font-family: fantasy;
 }

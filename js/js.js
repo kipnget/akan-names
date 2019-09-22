@@ -1,117 +1,285 @@
-var century, year, month, dayOfMonth, dayOfWeek, day;
-//Get input
-function getInput(){
-  century = parseInt(document.getElementById("century").value);
-  year = parseInt(document.getElementById("year").value);
-  month = parseInt(document.getElementById("month").value);
-  dayOfMonth = parseInt(document.getElementById("monthday").value);
+var akanArray = [
+  {
+      "Sunday": "Kwasi",
+      "Monday": "Kwadwo",
+      "Tuesday": "Kwabena",
+      "Wednesday": "Kwaku",
+      "Thurday": "Yaw",
+      "Friday": "Kofi",
+      "Saturday": "Kwame"
+  },
+  {
+      "Sunday": "Akosua",
+      "Monday": "Adwoa",
+      "Tuesday": "Abenaa",
+      "Wednesday": "Akua",
+      "Thurday": "Yaa",
+      "Friday": "Afua",
+      "Saturday": "Ama"
+
+  }
+]
+
+var weekDayArray = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thurday", "Friday", "Saturday"];
+var colorIndex = 0;
 
 
-  if(century == ""){
-    alert("Input the correct gender");
+
+
+function validateForm() {
+  var gender = document.getElementsByName("gender");
+  var mdate = document.getElementById("mdate");
+  var mmonth = document.getElementById("mmonth");
+  var myear = document.getElementById("myear");
+  var ccentury = documet.getElementById("ccentury")
+  var formValid = false;
+  var i = 0;
+  document.getElementById("result").innerHTML = "";
+  if (mdate.value == "" || mdate.value == null) {
+
+      document.getElementById("result").innerHTML += "Day is Required";
+      document.getElementById("result").style.color = 'red';
+
+      mdate.style.border = "2px solid red";
+      return false;
+  } else {
+      mdate.style.border = "";
+      if (!isNaN(mdate.value)) {
+          if (mdate.value <= 0 || mdate.value > 31) {
+              document.getElementById("result").innerHTML += "Invalid Day";
+              document.getElementById("result").style.color = 'red';
+
+              mdate.style.border = "2px solid red";
+              return false;
+          }
+      } else {var ccentury=parseInt(document.getElementById("ccentury").value);
+          document.getElementById("result").innerHTML += "Day must be a number";
+          document.getElementById("result").style.color = 'red';
+
+          mdate.style.border = "2px solid red";
+          return false;
+      }
+  }
+  if (mmonth.value == "" || mmonth.value == null) {
+      document.getElementById("result").innerHTML += "Month is Required";
+      document.getElementById("result").style.color = 'red';
+      mmonth.style.border = "2px solid red";
+      return false;
+  } else {
+      mmonth.style.border = "";
+      if (!isNaN(mmonth.value)) {
+          if (mmonth.value <= 0 || mmonth.value > 12) {
+              document.getElementById("result").innerHTML += "Invalid Month";
+              document.getElementById("result").style.color = 'red';
+
+              mmonth.style.border = "2px solid red";
+              return false;
+          }
+      } else {
+          document.getElementById("result").innerHTML += "Month must be a number";
+          document.getElementById("result").style.color = 'red';
+
+          mmonth.style.border = "2px solid red";
+          return false;
+      }
+  }
+  if (myear.value == "" || myear.value == null) {
+      document.getElementById("result").innerHTML += "Year is Required";
+      document.getElementById("result").style.color = 'red';
+      myear.style.border = "2px solid red";
+      return false;
+  } else {
+      myear.style.border = "";
+      if (!isNaN(myear.value)) {
+          if (myear.value.length != 4) {
+              document.getElementById("result").innerHTML += "Invalid Year";
+              document.getElementById("result").style.color = 'red';
+              myear.style.border = "2px solid red";
+              return false;
+          }
+      } else {
+          document.getElementById("result").innerHTML += "Year must be a number";
+          document.getElementById("result").style.color = 'red';
+
+          myear.style.border = "2px solid red";
+          return false;
+      }
+  } if (ccentury.value == "" || ccentury,value == null){
+    document.getElementById("result").innerHTML +="ccentury is required";
+    document.getElementById("result").style.color ='blue';
+    ccentury.style.border ="2px solid red";
     return false;
-  }else if (year == ""){
-    alert("Input the correct year");
-    return false;
-  }else if (month == ""){
-    alert("Input the correct month");
-    return false;
-  }else if(dayOfMonth ==""){
-    alert("input the correct date");
-    return false;
+  } else {
+    ccentury.style.border ="";
+    if (!isNaN(ccentury.value)) {
+      if (ccentury.value <= 0 || mmonth.value > 99) {
+        document.getElementById("result").innerHTML += "invalid century";
+        document.getElementById("result").style.color ='blue';
+
+        ccentury.style.border ="2px solid blue";
+        return false;
+      } else {
+        document.getElementById("result").innerHtml += "century must be a number between 1-99";
+        document.getElementById("result").style.color='blue';
+
+        ccentury.style.border = "2px solid red";
+        return false;
+      }
+    }
+  }
+
+  while (!formValid && i < gender.length) {
+      if (gender[i].checked)
+          formValid = true;
+      i++;
+  }
+  if (!formValid) {
+      document.getElementById("the-gender").style.color = 'red';
+      return false;
+  }
+
+
+  return formValid;
+
+}
+
+
+//get user inputs from the user
+function getUserDetails() {
+  var mdate = parseInt(document.getElementById("mdate").value);
+  var mmonth = parseInt(document.getElementById("mmonth").value);
+  var myear = parseInt(document.getElementById("myear").value);
+  var ccentury = parseInt(document.getElementById("ccentury").value);
+  var gender = document.getElementsByName("gender");
+  
+
+  for (var i = 0; i < gender.length; i++) {
+      if (gender[i].checked)
+          var GenderValue = gender[i].value;
+  }
+
+  var userDetails = {
+      mdate: mdate,
+      mmonth: mmonth,
+      myear: myear,
+      ccentury: ccentury,
+      myGenderValue: GenderValue,
+
+  }
+
+
+  return userDetails;
+
+}
+
+//run the functions simultaneously
+function aggregateFunctions() {
+  var formValid = validateForm();
+
+  if (!formValid) {
+      validateForm();
+      return false;
+  } {
+      getUserDetails();
+      verifyUserBirthday();
+      verifyccentury();
+      findUserAkanName();
+      printUserAkanName();
+      return false;
+
   }
 }
-//Calculate func
-function calculateDay(){
-    getInput();
-    dayOfWeek = ((((century/4) -2*century-1) + ((5*year/4) ) + ((26*(month+1)/10)) + dayOfMonth) % 7) -1;
-    console.log(dayOfWeek); //Test the calculateDay function
-    return (Math.floor(dayOfWeek));
-    if (dayOfWeek < 0) {
-      dayOfWeek = dayOfWeek * -1;
-    }
-    else if (dayOfWeek > 0) {
-      return dayOfWeek;
-    }
+
+
+//verify the day of the users birthday
+function verifyUserBirthday() {
+  var userDetailsObject = getUserDetails();
+  mdate = userDetailsObject.mdate;
+  mmonth = userDetailsObject.mmonth;
+  myear = userDetailsObject.myear;
+  ccentury = userDetailsObject.ccentury;
+
+
+  dayOfWeek = (((ccentury/4)-2*ccentury-1) +((5*myear/4))+((26*(mmonth+1)/10)) + mdate) % 7;
+
+  return dayOfWeek;
+
 }
 
-//main caller func
- function checkDayOfWeek(){
-     day = calculateDay();
-      checkGender();
-      console.log("The function runs");//Test chackDayOfWeek function
-}
-
-//arrays
-let daysOfWeek = ["sunday", "monday", "tuesday", "wednesday", "thursday", "friday", "saturday"];
-let maleNames = ["Kwasi", "Kwadwo", "Kwabena", "Kwaku", "Yaw", "Kofi", "Kwame"];
+//finds the akan name that matches the day and gender
+function findUserAkanName() {
+  var userDetailsObject = getUserDetails();
+  mGender = userDetailsObject.myGenderValue;
+  userWeekDayIndex = verifyUserBirthday();
 
 
-//get selected radio button
-function checkGender(){
-  var gen = document.getElementsByName("rads");
-  if(gen[0].checked == true){
-      var gender = "male";
-  }else if(gen[1].checked == true){
-      var gender = "female";
-  }else {
-    console.log("pass");//Test the radio buttons
+  var dayOfTheWeek = weekDayArray[userWeekDayIndex];
+  // alert(dayOfTheWeek);
+
+  if (mGender === "male") {
+
+      var akanArrayObject = akanArray[0];
+
+      for (var key in akanArrayObject) {
+          if (akanArrayObject.hasOwnProperty(key)) {
+              if (key === dayOfTheWeek) {
+                  // alert(key);
+                  // alert(akanArrayObject[key]);
+                  akanName = akanArrayObject[key];
+              }
+          }
+      }
+      // alert(akanName);
+  } else if (mGender === "female") {
+      var akanArrayObject = akanArray[1];
+
+      for (var key in akanArrayObject) {
+          if (akanArrayObject.hasOwnProperty(key)) {
+              if (key === dayOfTheWeek) {
+                  // alert(key);
+                  // alert(akanArrayObject[key]);
+                  akanName = akanArrayObject[key];
+              }
+          }
+      }
+      // alert(akanName);
+
+  } else {
+      alert("Error occured!");
   }
-    switch(gender){
-        case gender = "male":
-              switch(day){
-                case (0 || -0):
-                  document.getElementById("result").innerHTML = "The day is on a sunday." + "  " + "Your akan name is " + maleNames[0];
-                break;
-                case (1 || -1):
-                  document.getElementById("result").innerHTML = "The day is on a monday." + " " + "Your akan name is " + maleNames[1];
-                break;
-                case (2 || -2):
-                  document.getElementById("result").innerHTML = "The day is on a tuesday." + " " + "Your akan name is " + maleNames[2];
-                break;
-                case (3 || -3):
-                  document.getElementById("result").innerHTML = "The day is on a wednesday." + " " + "Your akan name is "+ maleNames[3];
-                break;
-                case (4 || -4):
-                  document.getElementById("result").innerHTML = "The day is on a thursday." + " " + "Your akan name is " + maleNames[4];
-                break;
-                case (5 || -5):
-                  document.getElementById("result").innerHTML = "The day is on a friday." + " " + "Your akan name is " + maleNames[5];
-                break;
-                case (6 || -6):
-                  document.getElementById("result").innerHTML = "The day is on a saturday." + " " + "Your akan name is " + maleNames[6];
-                break;
-                default:
-                // console.console.log("Pass");//Test male case
-              }
-        break;
-        case gender = "female":
-                switch(day){
-                  case 0 || -0:
-                    document.getElementById("result").innerHTML = "The day is on a sunday." + "  " + "Your akan name is  akosua";
-                  break;
-                  case 1 || -1:
-                    document.getElementById("result").innerHTML = "The day is on a monday." + " " + "Your akan name is adwoa ";
-                  break;
-                  case 2 || -2:
-                    document.getElementById("result").innerHTML = "The day is on a tuesday." + " " + "Your akan name is abenaa";
-                  break;
-                  case 3 || -3:
-                    document.getElementById("result").innerHTML = "The day is on a wednesday." + " " + "Your akan name is akua";
-                  break;
-                  case 4 || -4:
-                    document.getElementById("result").innerHTML = "The day is on a thursday." + " " + "Your akan name is yaa";
-                  break;
-                  case 5 || -5:
-                    document.getElementById("result").innerHTML = "The day is on a friday." + " " + "Your akan name is afua";
-                  break;
-                  case 6 || -6:
-                    document.getElementById("result").innerHTML = "The day is on a saturday." + " " + "Your akan name is ama";
-                  break;
 
-              }
-        break
-        default:
-        console.log("pass");//Test gender switch
-    }
+  var importantDetails = {
+      akanName: akanName,
+      dayOfTheWeek: dayOfTheWeek,
+      mGender: mGender
+
+
+  }
+  return importantDetails;
+
+}
+
+//prints user akan name to the DOM
+function printUserAkanName() {
+  clearInterval(changeBackgroundColor);
+  var akanDetails = findUserAkanName();
+  akanName = akanDetails.akanName;
+  dayOfTheWeek = akanDetails.dayOfTheWeek;
+  mGender = akanDetails.mGender;
+
+
+
+  document.getElementById("mheading").innerHTML = "BOOM!";
+  document.getElementById("myAkan").innerHTML = "Your Akan name is  " + akanName;
+  document.getElementById("reason").innerHTML = ' You WERE born on ' + dayOfTheWeek;
+  document.getElementById("myAkan").style.textDecoration = "underline overline";
+  document.getElementById("myAkan").style.color = '#6e2c00';
+  document.getElementById("myAkan").style.fontSize = '45px';
+
+
+}
+
+//clears the user input form 
+function clearInput() {
+  window.location.reload();
 }
