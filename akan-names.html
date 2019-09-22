@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>akan names</title>
+</head>
+<body>
+  <div class="wrapper">
+
+    <div class="navigate">
+      <h1>know your akan name</h1>
+
+    </div>
+    <div class="container">
+      <p>the web page allows you to know your akan name by choosing your birthday</p>
+      <form id="form1">
+        <div class="form-group row">
+          <label for="dateOfBirth" class ="col-sm-3" col-form-label>Enter your Birthday</label>
+          <div class="col-sm-9">
+            <input type="date" class="form-control" id ="dateOfBirth">
+          </div>
+        </div>
+        <fieldset class ="form-group">
+          <div class="row">
+            <legend class="col-form-label col-sm-3 pt-0">choose your gender</legend>
+            <div class="col-sm-9">
+              <div class="custom-control custom-radio">
+                <input class="custom-control-input" type="radio" id="maleGender" value="option1" name="custom-radio">
+                <label class="custom-control-label" for="maleGender">
+                  Male
+                </label>
+              </div>
+              <div class="custom-control custom-radio">
+                    <input class="custom-control-input" type="radio" id="femaleGender" value="option2" name="custom-radio">
+                    <label class="custom-control-label" for="femaleGender">
+                      Female
+                    </label>
+              </div>              
+            </div>
+          </div>
+        </fieldset>
+        <button type="button" class="btn btn-primary" id="button1" onclick="dateOfweek();">submit</button>
+      </form>
+      <p class="output" id="akanOutput"></p>
+    </div>
+  </div>
+  <script src="js/js.js"></script>
+</body>
+</html>
