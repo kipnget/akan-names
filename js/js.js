@@ -144,7 +144,7 @@ function validateForm() {
 }
 
 
-//get user inputs from the user
+//get inputs from the user
 function getUserDetails() {
   var mdate = parseInt(document.getElementById("mdate").value);
   var mmonth = parseInt(document.getElementById("mmonth").value);
