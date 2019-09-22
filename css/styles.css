@@ -1,0 +1,55 @@
+body {
+  font-family: 'Courier New', Courier, monospace;
+  color: aquamarine;
+}
+.wrapper {
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+.wrapper::before {
+  content: '';
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  opacity: 0.6;
+}
+.my-container {
+  z-index: 2;
+  position: relative;
+}
+.overlay {
+  height: 500px;
+}
+.container {
+  background-color: black;
+  height: 600px;
+}
+#form1 {
+  padding: 40px;
+  padding-top: 60px;
+  font-size: 20px;
+}
+.row {
+  padding: 2%;
+}
+.navigate {
+  background-color: black;
+  height: 80px;
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+  scroll-padding-top: 20px;
+}
+#para1{
+  padding-top: 50px;
+  font-size: 20px;
+}
+.output{
+  font-style: italic;
+  font-size: 20px;
+}
