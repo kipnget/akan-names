@@ -1,13 +1,15 @@
 body {
-  font-family: 'Courier New', Courier, monospace;
-  color: aquamarine;
+  font-family: avenir,serif;
+  color: bisque;
 }
+
 .wrapper {
   height: 100vh;
   position: relative;
   overflow: hidden;
 }
-.wrapper::before {
+
+.wrapper:before {
   content: '';
   display: block;
   position: absolute;
@@ -17,39 +19,60 @@ body {
   height: 100%;
   z-index: 1;
   opacity: 0.6;
+  background-image:url("../images/akan-people.jpg");
+  background-repeat: no-repeat;
+  background-position: 50% 0;
+  background-size: cover;
 }
+
 .my-container {
   z-index: 2;
   position: relative;
 }
-.overlay {
+
+.overlay{
+  background-color: rgba(204, 0, 0, 0.041);
   height: 500px;
 }
+
+img {
+  float: right;
+  width: 400px;
+  /* opacity: 0.2; */
+  /* background-color: rgba(204, 0, 0, 0.027); */
+}
+
 .container {
-  background-color: black;
+  background-color: rgba(0, 0, 0, 0.788);
+  /* opacity:  rgba(204, 0, 0, 0.041); */
   height: 600px;
 }
+
 #form1 {
-  padding: 40px;
-  padding-top: 60px;
-  font-size: 20px;
+padding: 40px;
+padding-top: 60px;
+font-size: 20px;
+
 }
+
 .row {
   padding: 2%;
 }
-.navigate {
-  background-color: black;
+
+.navigate{
+  background-color: rgba(0,0,0,0.5);
   height: 80px;
   position: relative;
   display: flex;
   justify-content: space-around;
-  scroll-padding-top: 20px;
+  padding-top: 20px;
 }
+
 #para1{
   padding-top: 50px;
   font-size: 20px;
 }
+
 .output{
-  font-style: italic;
-  font-size: 20px;
+  font-size: 22px;
 }

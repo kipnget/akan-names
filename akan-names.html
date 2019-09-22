@@ -1,32 +1,31 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="css/styles.css" type="text/css">
+    <title>Akan-Name</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="my-container">
 
-
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>akan names</title>
-</head>
-<body>
-  <div class="wrapper">
-
-    <div class="navigate">
-      <h1>know your akan name</h1>
-
-    </div>
-    <div class="container">
-      <p>the web page allows you to know your akan name by choosing your birthday</p>
-      <form id="form1">
-        <div class="form-group row">
-          <label for="dateOfBirth" class ="col-sm-3" col-form-label>Enter your Birthday</label>
-          <div class="col-sm-9">
-            <input type="date" class="form-control" id ="dateOfBirth">
-          </div>
-        </div>
-        <fieldset class ="form-group">
+        <div class="navigate">
+          <h1>know your Akan Name</h1>
+          
+        </div>  
+        <div class="container">
+          <p id="para1">This web page allows you to determine your Akan name by choosing your birthday on the calendar picker.</p> 
+          <form id="form1">
+            <div class="form-group row">
+              <label for="dateOfBirth" class="col-sm-3" col-form-label>Enter your birthday</label>
+              <div class="col-sm-9">
+                <input type="date" class="form-control" id="dateOfBirth">
+              </div>
+            </div>
+        <fieldset class="form-group">
           <div class="row">
-            <legend class="col-form-label col-sm-3 pt-0">choose your gender</legend>
+            <legend class="col-form-label col-sm-3 pt-0">Choose your gender</legend>
             <div class="col-sm-9">
               <div class="custom-control custom-radio">
                 <input class="custom-control-input" type="radio" id="maleGender" value="option1" name="custom-radio">
@@ -35,19 +34,22 @@
                 </label>
               </div>
               <div class="custom-control custom-radio">
-                    <input class="custom-control-input" type="radio" id="femaleGender" value="option2" name="custom-radio">
-                    <label class="custom-control-label" for="femaleGender">
-                      Female
-                    </label>
-              </div>              
+                <input class="custom-control-input" type="radio" id="femaleGender" value="option2" name="custom-radio">
+                <label class="custom-control-label" for="femaleGender">
+                  Female
+                </label>
+              </div>
             </div>
           </div>
         </fieldset>
-        <button type="button" class="btn btn-primary" id="button1" onclick="dateOfweek();">submit</button>
+        <button type="button" class="btn btn-primary" id="button1" onclick="dateOfWeek();">Submit</button>
+        
       </form>
       <p class="output" id="akanOutput"></p>
+      </div>
     </div>
+    
   </div>
-  <script src="js/js.js"></script>
-</body>
-</html>
+  <script src="js/js.js"></script>   
+  </body>
+  </html>
