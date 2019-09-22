@@ -37,6 +37,12 @@ function dateOfWeek() {
     console.log(akanFemales[day]);
   }
 }
+var doc = document.getElementsByTagName("BODY")[0];
+    doc.style.backgroundImage = "url('https://media.giphy.com/media/l0MYzWNmJvcR3SI3S/giphy-downsized.gif')";
+    doc.style.backgroundColor = "#f08a2d";
+    doc.style.backgroundRepeat = "no-repeat";
+    doc.style.backgroundSize = "cover";
+
 function clearInput() {
   window.location.reload();
 }
