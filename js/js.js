@@ -200,7 +200,7 @@ function verifyUserBirthday() {
   ccentury = userDetailsObject.ccentury;
 
 
-  dayOfWeek = (((ccentury/4)-2*ccentury-1) +((5*myear/4))+((26*(mmonth+1)/10)) + mdate) % 7;
+  dayOfWeek = (((ccentury/4)-2*ccentury-1) + ((5*myear/4))+((26*(mmonth+1)/10)) + mdate) % 7;
 
   return dayOfWeek;
 
@@ -261,7 +261,6 @@ function findUserAkanName() {
 
 //prints user akan name to the DOM
 function printUserAkanName() {
-  clearInterval(changeBackgroundColor);
   var akanDetails = findUserAkanName();
   akanName = akanDetails.akanName;
   dayOfTheWeek = akanDetails.dayOfTheWeek;
