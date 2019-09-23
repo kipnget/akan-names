@@ -13,7 +13,7 @@ function dateOfWeek() {
   }
   // alert(document.getElementById("akanOutput").innerHTML = d);
 
-  day = Math.floor(d)+1;
+  day = Math.floor(d)-1;
 
   daysOfTheWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 
@@ -46,3 +46,5 @@ var doc = document.getElementsByTagName("BODY")[0];
 function clearInput() {
   window.location.reload();
 }
+
+function validateform();
