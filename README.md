@@ -5,7 +5,7 @@ The ghanaianakan names is a website that outpits the ghanaian names according to
 It contains brief history of my studies, lifestyle and careers.
 ---------SETUP INSTALLATION/INSTRUCTION--------
 1. ACCESS THE WEBSITE BY TAPPING THE ABOVE LINK OR COPY AND PASTE IT ON YOUR SEARCH BAR.
-2. Alternatively, you can clone this project from [here](https://github.com/kipnget/portfolio-landing-page.git).
+2. Alternatively, you can clone this project from [here](http://kipnget.github.io/akan-names).
 3. Extract the file to a folder
 4. Open index.html with any browser of your choice.
 Bugs
